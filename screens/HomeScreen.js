@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/HomeScreenStyle';
 
-
 export default function HomeScreen({ navigation }) {
+  
   const generations = [
     { generation: 1, label: 'Generación 1' },
     { generation: 2, label: 'Generación 2' },
@@ -50,7 +50,9 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Image style={styles.imagenBanner} source={require('../assets/Banner.png')}></Image>
         <View style={styles.searchBarContainer}>
+            
             <TextInput
             placeholder="Buscar Pokémon por nombre"
             value={searchTerm}

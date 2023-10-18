@@ -44,11 +44,17 @@ const styles = StyleSheet.create({
   searchButton: {
     backgroundColor: '#D7252B',
     borderRadius: 8,
-    padding: 10, // Ajusta el tamaño del botón
+    padding: 10,
   },
   searchIcon: {
     color: 'white',
-    fontSize: 20, // Ajusta el tamaño del icono
+    fontSize: 20, 
+  },
+  imagenBanner:{
+    top: -20,
+    maxWidth: '100%',
+    maxHeight: '30%',
+    borderRadius: 20, 
   },
 });
 
