@@ -42,7 +42,7 @@ export default function HomeScreen({ navigation }) {
           if (pokemonEncontrado) {
             navigation.navigate('PokemonDetailScreen', { pokemon: pokemonEncontrado });
           } else {
-            navigation.navigate('PokemonNoEncontrado');
+            navigation.navigate('PokemonNotFound');
           }
         });
     }
