@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Button} from 'react-native';
+import FavoritosButton from '../styles/FavoritosButton';
+import ImageBack from '../assets/BackGroundImage.jpg';
 
-export default function PokemonDetailScreen({ route }) {
+
+export default function PokemonDetailScreen({ route,navigation  }) {
   const { pokemon } = route.params;
-
   const pokemonImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
 
   const [pokemonType, setPokemonType] = useState('');
@@ -114,13 +116,12 @@ export default function PokemonDetailScreen({ route }) {
   };
 
   const getAbilityDescription = (abilityName) => {
-  if (abilityDescriptions[abilityName]) {
-    return abilityDescriptions[abilityName];
-  }
-  return 'No description available';
-};
+    if (abilityDescriptions[abilityName]) {
+      return abilityDescriptions[abilityName];
+    }
+    return 'No description available';
+  };
 
-  
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -138,6 +139,7 @@ export default function PokemonDetailScreen({ route }) {
     image: {
       width: 200,
       height: 200,
+      marginTop:100,
     },
     name: {
       fontSize: 24,
@@ -146,6 +148,7 @@ export default function PokemonDetailScreen({ route }) {
       position: 'absolute', 
       top: 10,
       left: 10,
+
     },
     typeImage: {
       width: 50,
@@ -161,31 +164,46 @@ export default function PokemonDetailScreen({ route }) {
     boldText: {
       fontWeight: 'bold',
     },
+    backgroundImage: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '120%', 
+      maxHeight: '30%',
+    },
   });
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Image source={{ uri: pokemonImageUrl }} style={styles.image} />
-        <Text style={styles.name}>{pokemon.name}</Text>
-        <Image source={getTypeImage(pokemonType)} style={styles.typeImage} />
-        <Text style={styles.type}>{pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}</Text>
-        <Text style={styles.infoText}>Altura: {pokemon.height} m</Text>
-        <Text style={styles.infoText}>Peso: {pokemon.weight} kg</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.card}>
+          <Image source={ImageBack} style={styles.backgroundImage} /> 
+          <Image source={{ uri: pokemonImageUrl }} style={styles.image} />
+          <Text style={styles.name}>{pokemon.name}</Text>
+          <Image source={getTypeImage(pokemonType)} style={styles.typeImage} />
+          <Text style={styles.type}>{pokemonType.charAt(0).toUpperCase() + pokemonType.slice(1)}</Text>
+          <Text style={styles.infoText}>Altura: {pokemon.height} m</Text>
+          <Text style={styles.infoText}>Peso: {pokemon.weight} kg</Text>
 
-        {
-          abilities.map((ability, index) => (
-            <View key={index}>
-              <Text style={[styles.abilities, styles.boldText]}>{ability.name}</Text>
-              <Text style={styles.abilities}>{getAbilityDescription(ability.name)}</Text>
-            </View>
-          ))
-        }
+          {
+            abilities.map((ability, index) => (
+              <View key={index}>
+                <Text style={[styles.abilities, styles.boldText]}>{ability.name}</Text>
+                <Text style={styles.abilities}>{getAbilityDescription(ability.name)}</Text>
+              </View>
+            ))
+          }
 
-        {
-        description !== '' && (
-          <Text style={styles.abilities}>{description}</Text>
-        )}
+          {
+          description !== '' && (
+            <Text style={styles.abilities}>{description}</Text>
+          )}
+
+          <TouchableOpacity>
+            <FavoritosButton />
+          </TouchableOpacity>
+
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
