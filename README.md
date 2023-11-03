@@ -1,5 +1,12 @@
 # Poke-Data-Movil
 
+Colaboradores
+
+-Amaya Ortega Manuel Alejandro
+-Marges Gonzalez De La Llave Eduardo
+-Ochoa Cota Erubiel
+-Vega Ornelas Annakary
+
 #Introducción
 
 La Aplicación de Información de Pokémon es una aplicación móvil desarrollada en Expo que proporciona información detallada sobre los Pokémon, organizada por generaciones y Pokémon individuales. Los usuarios pueden explorar datos sobre sus Pokémon favoritos y aprender más sobre cada generación.
