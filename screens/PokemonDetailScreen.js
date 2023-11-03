@@ -23,37 +23,61 @@ export default function PokemonDetailScreen({ route,navigation  }) {
 
         switch (type) {
           case 'fire':
-            setCardBackgroundColor('#F37046');
+            setCardBackgroundColor('#FF9C54');
             break;
           case 'water':
-            setCardBackgroundColor('#4bacec');
+            setCardBackgroundColor('#4D90D5');
+            break;
+          case 'ice':
+            setCardBackgroundColor('#74CEC0');
             break;
           case 'grass':
-            setCardBackgroundColor('#92AA47');
+            setCardBackgroundColor('#5DB056');
             break;
-          case 'earth':
-            setCardBackgroundColor('orange');
+          case 'ground':
+            setCardBackgroundColor('#D97746');
+            break;
+          case 'rock':
+            setCardBackgroundColor('#C7B78B');
             break;
           case 'electric':
-            setCardBackgroundColor('#FFE14C');
+            setCardBackgroundColor('#F3D23B');
             break;
           case 'steel':
-            setCardBackgroundColor('#CDD8DC');
+            setCardBackgroundColor('#5A8EA1');
             break;
           case 'dark':
-            setCardBackgroundColor('#031315');
+            setCardBackgroundColor('#060809');
             break;
           case 'fighting':
-            setCardBackgroundColor('#D4E1E5');
+            setCardBackgroundColor('#4F1A2A');
             break;
           case 'normal':
-            setCardBackgroundColor('#ffffff');
+            setCardBackgroundColor('#9099A1');
             break;
           case 'psychic':
-            setCardBackgroundColor('#B680BA');
+            setCardBackgroundColor('#F97176');
             break;
           case 'fairy':
-            setCardBackgroundColor('#C2316A');
+            setCardBackgroundColor('#EC8FE6');
+            break;
+          case 'dragon':
+            setCardBackgroundColor('#0A6DC4');
+            break;
+          case 'poison':
+            setCardBackgroundColor('#EC8FE6');
+            break;
+          case 'ice':
+            setCardBackgroundColor('#74CEC0');
+            break;
+          case 'bug':
+            setCardBackgroundColor('#90C12C');
+            break;
+          case 'flying':
+            setCardBackgroundColor('#8FA8DD');
+            break;
+          case 'ghost':
+            setCardBackgroundColor('#5269AC');
             break;
           default:
             setCardBackgroundColor('white');
@@ -86,34 +110,48 @@ export default function PokemonDetailScreen({ route,navigation  }) {
     .catch((error) => console.error(error));
 }, [pokemon.id]);
 
-  const getTypeImage = (type) => {
-    switch (type) {
-      case 'normal':
-        return require('../types/Normal.png');
-      case 'fire':
-        return require('../types/Fuego.png');
-      case 'water':
-        return require('../types/Agua.png');
-      case 'grass':
-        return require('../types/Planta.png');
-      case 'earth':
-        return require('../types/Tierra.png');
-      case 'electric':
-        return require('../types/Electro.png');
-      case 'psychic':
-        return require('../types/Psiquico.png');
-      case 'fighting':
-        return require('../types/Lucha.png');
-      case 'dark':
-        return require('../types/Siniestro.png');
-      case 'steel':
-        return require('../types/Metal.png');
-      case 'fairy':
-        return require('../types/Hada.png');
-      default:
-        return require('../types/Normal.png');
-    }
-  };
+const getTypeImage = (type) => {
+  switch (type) {
+    case 'normal':
+      return require('../types/Normal.png');
+    case 'fire':
+      return require('../types/Fuego.png');
+    case 'water':
+      return require('../types/Agua.png');
+    case 'grass':
+      return require('../types/Planta.png');
+    case 'rock':
+      return require('../types/Roca.png');
+    case 'ground':
+      return require('../types/Tierra.png');
+    case 'electric':
+      return require('../types/Electro.png');
+    case 'psychic':
+      return require('../types/Psiquico.png');
+    case 'fighting':
+      return require('../types/Lucha.png');
+    case 'dark':
+      return require('../types/Siniestro.png');
+    case 'steel':
+      return require('../types/Metal.png');
+    case 'fairy':
+      return require('../types/Hada.png');
+    case 'dragon':
+      return require('../types/Dragon.png');
+    case 'bug':
+      return require('../types/Bicho.png');
+    case 'ice':
+      return require('../types/Hielo.png');
+    case 'flying':
+      return require('../types/Volador.png');
+    case 'poison':
+      return require('../types/Veneno.png');
+    case 'ghost':
+      return require('../types/Fantasma.png');
+    default:
+      return require('../types/Normal.png');
+  }
+};
 
   const getAbilityDescription = (abilityName) => {
     if (abilityDescriptions[abilityName]) {

@@ -12,9 +12,9 @@ export default StyleSheet.create({
   },
   pokemonContainer: {
     flex: 1,
-    borderWidth: 1, // Ancho del borde
-    borderColor: 'gray', // Color del borde
-    padding: 0, // Espacio alrededor del rectángulo
+    borderWidth: 1, 
+    borderColor: 'gray', 
+    padding: 0,
     alignItems: 'center',
     marginBottom: 10,
   },
