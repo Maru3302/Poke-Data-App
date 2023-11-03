@@ -3,7 +3,6 @@ import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Button} fr
 import FavoritosButton from '../styles/FavoritosButton';
 import ImageBack from '../assets/BackGroundImage.jpg';
 
-
 export default function PokemonDetailScreen({ route,navigation  }) {
   const { pokemon } = route.params;
   const pokemonImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
@@ -152,7 +151,7 @@ const getTypeImage = (type) => {
       return require('../types/Normal.png');
   }
 };
-
+  
   const getAbilityDescription = (abilityName) => {
     if (abilityDescriptions[abilityName]) {
       return abilityDescriptions[abilityName];
@@ -183,7 +182,7 @@ const getTypeImage = (type) => {
       fontSize: 24,
       fontWeight: 'bold',
       marginTop: 10,
-      position: 'absolute', 
+      position: 'absolute',
       top: 10,
       left: 10,
 
