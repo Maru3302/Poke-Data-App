@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "poke-data",
+    "name": "Poke Api",
     "slug": "poke-data",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0c0e11"
+      "backgroundColor": "#E32730"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,18 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0c0e11"
-      }
+        "backgroundColor": "#E32730"
+      },
+      "package": "com.maru3302.pokedata",
+      "publishBundlePath": "APK"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "efcdb037-da1f-49f6-9a89-8e92e78bb8ba"
+      }
     }
   }
 }
